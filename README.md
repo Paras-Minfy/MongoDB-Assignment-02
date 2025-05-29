@@ -22,6 +22,32 @@ This repository contains MongoDB aggregation queries executed on a `products` co
 └── README.md
 ```
 
+## Setup: Sample Data
+* Open your `mongosh` or `mongo` shell.
+* Switch to a new database (or an existing test database):
+```js
+use aggregationAssignmentDB
+```
+
+* Insert the following sample data into a collection named products:
+```js
+db.products.insertMany([
+  { name: "Laptop Pro", category: "Electronics", price: 1200, quantity: 10, tags: ["computer", "portable", "work"], date_added: new Date("2023-01-15T10:00:00Z"), supplier: { name: "TechGlobe", location: "USA" } },
+  { name: "Wireless Mouse", category: "Electronics", price: 25, quantity: 100, tags: ["peripheral", "computer", "wireless"], date_added: new Date("2023-02-01T11:30:00Z"), supplier: { name: "GadgetPro", location: "China" } },
+  { name: "Mechanical Keyboard", category: "Electronics", price: 75, quantity: 50, tags: ["peripheral", "computer", "mechanical"], date_added: new Date("2023-01-20T14:00:00Z"), supplier: { name: "TechGlobe", location: "USA" } },
+  { name: "Cotton T-Shirt", category: "Apparel", price: 20, quantity: 200, tags: ["clothing", "cotton", "casual"], date_added: new Date("2023-03-10T09:00:00Z"), supplier: { name: "FashionHub", location: "India" } },
+  { name: "Denim Jeans", category: "Apparel", price: 60, quantity: 80, tags: ["clothing", "denim"], date_added: new Date("2023-03-01T16:45:00Z"), supplier: { name: "FashionHub", location: "India" } },
+  { name: "Espresso Machine", category: "Home Goods", price: 250, quantity: 30, tags: ["kitchen", "appliance", "coffee"], date_added: new Date("2023-02-15T08:20:00Z"), supplier: { name: "HomeBest", location: "Germany" } },
+  { name: "Smartwatch", category: "Electronics", price: 199, quantity: 25, tags: ["wearable", "gadget", "portable"], date_added: new Date("2023-04-01T12:00:00Z"), supplier: { name: "GadgetPro", location: "China" } },
+  { name: "Leather Wallet", category: "Accessories", price: 45, quantity: 120, tags: ["fashion", "leather"], date_added: new Date("2023-03-20T10:10:00Z"), supplier: { name: "StyleCraft", location: "Italy" } },
+  { name: "Yoga Mat", category: "Sports", price: 30, quantity: 90, tags: ["fitness", "exercise"], date_added: new Date("2023-04-05T13:00:00Z"), supplier: { name: "ActiveLife", location: "USA" } },
+  { name: "Bluetooth Speaker", category: "Electronics", price: 80, quantity: 60, tags: ["audio", "portable", "wireless"], date_added: new Date("2023-02-25T17:00:00Z"), supplier: { name: "SoundWave", location: "USA" } }
+]);
+
+```
+
+![SetupSampleData](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/setup/0.png)
+
 ---
 
 ## ✅ Easy Level
@@ -34,7 +60,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Electronics Products](screenshots/easy/1.png)
+![Electronics Products](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/easy/1.png)
 
 ---
 
@@ -51,7 +77,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Category Count](screenshots/easy_2_category_count.png)
+![Category Count](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/easy/2.png)
 
 ---
 
@@ -72,7 +98,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Price Sorted](screenshots/easy_3_price_sorted.png)
+![Price Sorted](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/easy/3.png)
 
 ---
 
@@ -91,7 +117,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Supplier Quantity](screenshots/medium_1_supplier_quantity.png)
+![Supplier Quantity](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/medium/1.png)
 
 ---
 
@@ -112,7 +138,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Tag Average Price](screenshots/medium_2_tag_avg_price.png)
+![Tag Average Price](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/medium/2.png)
 
 ---
 
@@ -144,7 +170,7 @@ db.products.aggregate([
 ]);
 ```
 
-![February 2023](screenshots/medium_3_feb_2023.png)
+![February 2023](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/medium/3.png)
 
 ---
 
@@ -186,7 +212,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Value Classification](screenshots/hard_1_category_value_classification.png)
+![Value Classification](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/hard/1.png)
 
 ---
 
@@ -215,7 +241,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Expensive Product per Supplier](screenshots/hard_2_supplier_expensive_product.png)
+![Expensive Product per Supplier](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/hard/2.png)
 
 ---
 
@@ -238,7 +264,7 @@ db.products.aggregate([
 ]);
 ```
 
-![Portable but Not Computer](screenshots/hard_3_portable_not_computer.png)
+![Portable but Not Computer](https://github.com/Paras-Minfy/MongoDB-Assignment-02/blob/main/screenshots/hard/3.png)
 
 ---
 
@@ -247,5 +273,3 @@ db.products.aggregate([
 * MongoDB v5 or above
 * Mongo Shell or Compass
 * Sample dataset with `products` collection and fields: `name`, `category`, `price`, `quantity`, `tags`, `supplier`, `date_added`
-
----
